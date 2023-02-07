@@ -1,2 +1,27 @@
-package lesson07.human_tree.view.command;public class PrintHumanSistBroth {
+package lesson07.human_tree.view.command;
+
+import view.View;
+
+public class PrintHumanSistBroth implements Option{
+    View view;
+
+    public PrintHumanSistBroth(View view) {
+        this.view = view;
+    }
+
+    @Override
+    public String discription() {
+        return "Get human sisters and brothers in console";
+    }
+
+    @Override
+    public void execute(int order) {
+        view.printHumanSistBroth(order);
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("Lost id of human");
+        return;
+    }
 }
