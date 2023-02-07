@@ -1,2 +1,26 @@
-package lesson07.human_tree.view.command;public class PrintHumanChild {
+package lesson07.human_tree.view.command;
+import view.View;
+
+public class PrintHumanChild implements Option{
+    View view;
+
+    public PrintHumanChild(View view) {
+        this.view = view;
+    }
+
+    @Override
+    public String discription() {
+        return "Get child human in console";
+    }
+
+    @Override
+    public void execute(int order) {
+        view.printHumanChild(order);
+    }
+
+    @Override
+    public void execute() {
+        System.out.println("Lost id of human");
+        return;
+    }
 }
